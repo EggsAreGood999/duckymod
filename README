@@ -1,0 +1,5 @@
+cd "C:\Users\blind\Downloads\forge-1.21.1-Ducky"
+git branch
+git add -A
+git commit -am "doing stuff"
+git push origin main

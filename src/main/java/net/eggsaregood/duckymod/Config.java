@@ -1,4 +1,4 @@
-package net.eggsaregood.Mod;
+package net.eggsaregood.duckymod;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
-  "textures": {
+  "Texture": {
     "layer0": "duckymod:item/ducky"
   }
 }

@@ -1,4 +1,4 @@
-package net.eggsaregood.Mod;
+package net.eggsaregood.duckymod;
 
 import com.mojang.logging.LogUtils;
 import item.ModItems;
@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 @net.minecraftforge.fml.common.Mod(duckymod.MOD_ID)
 public class duckymod {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "ducky";
+    public static final String MOD_ID = "duckymod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 

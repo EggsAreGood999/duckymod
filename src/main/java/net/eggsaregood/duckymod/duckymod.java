@@ -2,6 +2,7 @@ package net.eggsaregood.duckymod;
 
 import com.mojang.logging.LogUtils;
 import item.ModItems;
+import net.eggsaregood.duckymod.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,7 +33,7 @@ public class duckymod {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
-
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
 
@@ -47,6 +48,11 @@ public class duckymod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.ducky);
+
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModBlocks.DUCKY_BLOCK);
+
+        }
         }
     }
 

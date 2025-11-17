@@ -1,6 +1,7 @@
 package net.eggsaregood.duckymod;
 
 import com.mojang.logging.LogUtils;
+import item.ModCreativeModeTabs;
 import item.ModItems;
 import net.eggsaregood.duckymod.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -19,18 +20,21 @@ import org.slf4j.Logger;
 
 // Very important Comment
 // The value here should match an entry in the META-INF/mods.toml file
-@net.minecraftforge.fml.common.Mod(duckymod.MOD_ID)
-public class duckymod {
+@net.minecraftforge.fml.common.Mod(DuckyMod.MOD_ID)
+
+public class DuckyMod {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "duckymod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public duckymod() {
+    public DuckyMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -46,27 +50,14 @@ public class duckymod {
 
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.ducky);
 
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModBlocks.DUCKY_BLOCK);
+
+
 
         }
         }
-    }
 
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
 
-    }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @net.minecraftforge.fml.common.Mod.EventBusSubscriber(modid = MOD_ID, bus = net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
 
-        }
-    }
-}
+

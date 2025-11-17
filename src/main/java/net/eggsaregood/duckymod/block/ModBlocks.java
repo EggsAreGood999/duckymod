@@ -1,7 +1,7 @@
 package net.eggsaregood.duckymod.block;
 
 import item.ModItems;
-import net.eggsaregood.duckymod.duckymod;
+import net.eggsaregood.duckymod.DuckyMod;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -17,9 +17,9 @@ import java.util.function.Supplier;
 public class ModBlocks {
 
     public static DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, duckymod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, DuckyMod.MOD_ID);
 
-    public static RegistryObject<Block> DUCKY_BLOCK = registerBlock("ducky_block",
+    public static RegistryObject<Block> ducky_block = registerBlock("ducky_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.LADDER)));
 

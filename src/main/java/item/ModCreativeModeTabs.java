@@ -20,6 +20,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.DUCKY.get());
                         output.accept(ModBlocks.ducky_block.get());
+                        output.accept(ModItems.DUCKY_STICK.get());
                     }).build());
 
 

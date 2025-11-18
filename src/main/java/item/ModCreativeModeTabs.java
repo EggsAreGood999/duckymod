@@ -19,8 +19,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("Ducky"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.DUCKY.get());
-                        output.accept(ModBlocks.ducky_block.get());
+                        output.accept(ModBlocks.DUCKY_BLOCK.get());
                         output.accept(ModItems.DUCKY_STICK.get());
+                        output.accept(ModItems.DUCKY_WAND.get());
                     }).build());
 
 

@@ -1,5 +1,6 @@
 {
   "item.duckymod.ducky": "Ducky",
   "block.duckymod.ducky_block": "Ducky Block",
-  "item.duckymod.ducky_stick":  "Ducky Stick"
+  "item.duckymod.ducky_stick":  "Ducky Stick",
+  "item.custom.ducky_wand.duckymod.ducky_wand":  "Ducky Wand"
 }

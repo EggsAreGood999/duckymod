@@ -20,8 +20,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, DuckyMod.MOD_ID);
 
     public static RegistryObject<Block> DUCKY_BLOCK = registerBlock("ducky_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.LADDER)));
+            () -> new Block(BlockBehaviour.Properties.of()));
+                    
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

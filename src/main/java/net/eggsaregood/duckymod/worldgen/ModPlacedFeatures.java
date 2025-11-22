@@ -1,42 +1,42 @@
 package net.eggsaregood.duckymod.worldgen;
 
-import net.minecraft.core.HolderGetter;
+import net.eggsaregood.duckymod.worldgen.ModConfiguredFeatures;
+import net.eggsaregood.duckymod.worldgen.ModOrePlacement;
+import net.eggsaregood.duckymod.DuckyMod;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
+import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final ResourceKey<PlacedFeature> DUCKY_ORE_PLACED_KEY = registerKey("ducky_ore_placed");
 
-    // 🔹 Key for your placed feature
-    public static final ResourceKey<PlacedFeature> ORE_MY_ORE_PLACED =
-            ResourceKey.create(Registries.PLACED_FEATURE,
-                    new ResourceLocation("Duckymod", "ore_my_ore"));
 
-    // 🔹 Called from your main mod's data bootstrap (or from ModWorldgen.java)
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        HolderGetter<ConfiguredFeature<?, ?>> configured = context.lookup(Registries.CONFIGURED_FEATURE);
+        register(context, DUCKY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_DUCKY_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(12,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
 
-        // == Placement modifiers ==
-        var modifiers = OrePlacement.commonOrePlacement(
-                10, // veins per chunk
-                HeightRangePlacement.uniform(
-                        VerticalAnchor.absolute(-64),
-                        VerticalAnchor.absolute(32))
-        );
 
-        context.register(
-                ORE_MY_ORE_PLACED,
-                new PlacedFeature(
-                        configured.getOrThrow(ModConfiguredFeatures.ORE_MY_ORE),  // your configured feature
-                        modifiers
-                )
-        );
+    }
+
+    private static ResourceKey<PlacedFeature> registerKey(String name) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(DuckyMod.MOD_ID, name));
+    }
+
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+                                 List<PlacementModifier> modifiers) {
+        context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 }

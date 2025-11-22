@@ -1,7 +1,7 @@
 {
-  "type": "minecraft:fishing",
   "pools": [
     {
+      "name": "main_fish",
       "rolls": 1,
       "entries": [
         {
@@ -12,16 +12,27 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:salmon",
-          "weight": 20
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pufferfish",
+          "weight": 1
         },
         {
           "type": "minecraft:item",
           "name": "duckymod:ducky",
-          "weight": 10,
+          "weight": 999999,
           "conditions": [
             {
 
-              }
+
+            }
           ]
         }
       ]

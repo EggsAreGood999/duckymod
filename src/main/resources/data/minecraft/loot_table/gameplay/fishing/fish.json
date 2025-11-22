@@ -27,13 +27,7 @@
         {
           "type": "minecraft:item",
           "name": "duckymod:ducky",
-          "weight": 999999,
-          "conditions": [
-            {
-
-
-            }
-          ]
+          "weight": 10
         }
       ]
     }

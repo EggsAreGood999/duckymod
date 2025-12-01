@@ -1,12 +1,12 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "AA",
-    "AA"
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "duckymod:ducky" },
+    { "item": "duckymod:ducky" },
+    { "item": "duckymod:ducky" },
+    { "item": "duckymod:ducky" }
   ],
-  "key": {
-    "A": { "item": "duckymod:ducky" }
-  },
   "result": {
     "item": "duckymod:ducky_block",
     "count": 1

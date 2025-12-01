@@ -1,5 +1,5 @@
 {
-  "feature": "duckymod:overworld_ducky_ore",
+  "feature": "duckymod:ducky_ore",
   "placement": [
     {
       "type": "minecraft:count",

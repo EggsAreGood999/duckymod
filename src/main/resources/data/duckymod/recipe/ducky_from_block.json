@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "duckymod:ducky_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "duckymod:ducky"
+  }
+}

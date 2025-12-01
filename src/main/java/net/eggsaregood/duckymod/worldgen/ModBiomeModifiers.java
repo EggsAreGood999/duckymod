@@ -1,7 +1,6 @@
 package net.eggsaregood.duckymod.worldgen;
 
 import net.eggsaregood.duckymod.DuckyMod;
-import net.kaupenjoe.tutorialmod.TutorialMod;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -14,7 +13,7 @@ import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModBiomeModifiers {
-    public static final ResourceKey<BiomeModifier> ADD_DUCKY_ORE = registerKey("add_ducky_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DUCKY_BLOCK = registerKey("add_ducky_ore");
 
 
 
@@ -22,10 +21,11 @@ public class ModBiomeModifiers {
         var placedFeature = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-    context.register(ADD_DUCKY_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+    context.register(ADD_DUCKY_BLOCK, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.DUCKY_ORE_PLACED_KEY=)),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.DUCKY_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
+
 
         // Individual Biomes
         // context.register(ADD_ALEXANDRITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(

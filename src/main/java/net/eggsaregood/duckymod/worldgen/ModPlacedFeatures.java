@@ -25,7 +25,7 @@ public class ModPlacedFeatures {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, DUCKY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_DUCKY_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(12,
+                ModOrePlacement.commonOrePlacement(67,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
 
 

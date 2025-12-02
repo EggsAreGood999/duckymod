@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "duckymod:block/ducky_ore_block"
+    }
+  }
+}

@@ -20,6 +20,11 @@ public class ModItems {
     public static final RegistryObject<Item> DUCKY_WAND = ITEMS.register("ducky_wand",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> RAW_DUCKY_ORE = ITEMS.register("raw_ducky_ore",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> BURNT_DUCKY_ORE = ITEMS.register("burnt_ducky_ore",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

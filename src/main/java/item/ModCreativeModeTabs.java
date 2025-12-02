@@ -22,6 +22,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DUCKY_BLOCK.get());
                         output.accept(ModItems.DUCKY_STICK.get());
                         output.accept(ModItems.DUCKY_WAND.get());
+                        output.accept(ModBlocks.DUCKY_ORE_BLOCK.get());
+                        output.accept(ModItems.RAW_DUCKY_ORE.get());
                     }).build());
 
 

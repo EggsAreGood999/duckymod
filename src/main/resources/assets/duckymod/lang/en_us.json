@@ -2,5 +2,8 @@
   "item.duckymod.ducky": "Ducky",
   "block.duckymod.ducky_block": "Ducky Block",
   "item.duckymod.ducky_stick":  "Ducky Stick",
-  "item.custom.ducky_wand.duckymod.ducky_wand":  "Ducky Wand"
+  "item.ducky_wand.duckymod.ducky_wand":  "Ducky Wand",
+  "block.duckymod.ducky_ore_block": "Ducky Ore Block",
+  "item.duckymod.raw_ducky_ore": "Raw Ducky Ore",
+  "item.duckymod.burnt_ducky_ore": "Burnt Ducky Ore"
 }

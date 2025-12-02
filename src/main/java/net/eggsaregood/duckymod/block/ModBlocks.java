@@ -2,9 +2,11 @@ package net.eggsaregood.duckymod.block;
 
 import item.ModItems;
 import net.eggsaregood.duckymod.DuckyMod;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +28,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.ANVIL)));
 
+    public static final RegistryObject<Block> DUCKY_ORE_BLOCK = registerBlock("ducky_ore_block",
+            () -> new DropExperienceBlock(UniformInt.of(999, 999999), BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
 
 
 

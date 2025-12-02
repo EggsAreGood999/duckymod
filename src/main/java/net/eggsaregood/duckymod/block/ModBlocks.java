@@ -29,9 +29,9 @@ public class ModBlocks {
                     .sound(SoundType.ANVIL)));
 
     public static final RegistryObject<Block> DUCKY_ORE_BLOCK = registerBlock("ducky_ore_block",
-            () -> new DropExperienceBlock(UniformInt.of(999, 999999), BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops()));
-
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(640f, 1200f)
+                    .requiresCorrectToolForDrops()));
 
 
 
